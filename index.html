@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+		<head>
+			<title>Change Case</title>
+		</head>
+			<body>
+
+			<input type="text" placeholder="type" id="text">
+			<button onclick="changeCase()">Submit</button>
+
+			<p id="result"></p>
+
+					<script>
+							function changeCase() {
+								let a = document.getElementById("text").value;
+								Case(a, 0);
+							}
+
+							function Case(a, i) {
+
+								if (i < a.length) {
+
+									if (a[i] == a[i].toUpperCase()) {
+										document.getElementById("result").innerHTML += a[i].toLowerCase();
+									}
+									else {
+										document.getElementById("result").innerHTML += a[i].toUpperCase();
+									}
+
+									Case(a, i + 1);
+								}
+							}
+					</script>
+
+			</body>
+</html>
