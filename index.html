@@ -1,17 +1,131 @@
-<!DOCTYPE HTML>
-<html>
-		<head>
-			<title>Change Case</title>
-		</head>
-			<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Case</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-			<input type="text" placeholder="type" id="text">
-			<button onclick="changeCase()">Submit</button>
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
 
-			<p id="result"></p>
+        .card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
 
-					<script>
-							function changeCase() {
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+            color: #38bdf8;
+            margin-bottom: 0.5rem;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: #0f172a;
+            border: 1px solid #475569;
+            border-radius: 0.5rem;
+            color: #f8fafc;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+        }
+
+        button {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: #38bdf8;
+            color: #0f172a;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        button:hover {
+            background: #0ea5e9;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .result-container {
+            margin-top: 0.5rem;
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            word-break: break-all;
+            text-align: center;
+        }
+
+        #result {
+            font-size: 1.1rem;
+            color: #34d399;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>Change Case</h2>
+        
+        <div class="input-group">
+            <input type="text" placeholder="Type something..." id="text" autocomplete="off">
+            <button onclick="changeCase()">Submit</button>
+        </div>
+
+        <div class="result-container">
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <script>
+        function changeCase() {
 								let a = document.getElementById("text").value;
 								Case(a, 0);
 							}
@@ -30,7 +144,7 @@
 									Case(a, i + 1);
 								}
 							}
-					</script>
+    </script>
 
-			</body>
+</body>
 </html>
